@@ -6,11 +6,64 @@
 <title>Privacy Policy — Hringer</title>
 <style>
   body { font-family: -apple-system, Segoe UI, sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; color: #222; }
+  h1 { margin-bottom: 0.25rem; }
+  .updated { color: #666; margin-top: 0; font-size: 0.9rem; }
+  h2 { margin-top: 2.5rem; }
+  footer { margin-top: 3rem; font-size: 0.9rem; color: #888; }
+  a { color: #0a5; }
 </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p>This page will cover data handling for all Hringer apps (Tiny Slideshow, Mainline DCC, and Binaural Composer). Full policy in progress.</p>
-  <p><a href="/">&larr; Back to Hringer</a></p>
+  <p class="updated">Last updated: September 10, 2026</p>
+
+  <p>This policy covers software published by Hringer (Heather Ring). It currently details
+  <a href="https://tiny-slideshow.hringer.com">Tiny Slideshow</a>'s data practices in full; sections
+  for other Hringer apps will be added here as each is reviewed and published under this domain.</p>
+
+  <h2>The short version</h2>
+  <p>Hringer does not operate servers that collect analytics or track your usage, does not use
+  ad networks or third-party trackers, and does not sell or share your data with anyone. When an
+  app needs to access something like your photo library, it talks directly to the service you
+  authorized (Google, Microsoft) from your own device.</p>
+
+  <h2>Tiny Slideshow</h2>
+  <p>Tiny Slideshow displays photos from sources you choose:</p>
+  <p><strong>This Device / iCloud</strong> — a local folder you pick (or, for iCloud, one Tiny
+  Slideshow detects automatically among your synced folders). This just reads files already on
+  your computer; no network connection or account is involved.</p>
+  <p><strong>Google Photos</strong> — accessed through Google's Photos Picker API. You explicitly
+  select which photos to share via Google's own picker interface; the app only ever sees what you
+  picked, using a read-only scope (<code>photospicker.mediaitems.readonly</code>) that can't
+  browse or modify your library beyond that selection.</p>
+  <p><strong>OneDrive</strong> — accessed via Microsoft's identity platform (MSAL) with the
+  <code>Files.Read</code> and <code>User.Read</code> scopes, so the app can list and read your
+  OneDrive files. To avoid asking you to sign in every time, an authentication token is cached
+  locally on your device, encrypted with Windows' built-in DPAPI protection — it never leaves
+  your machine.</p>
+  <p>In every case, photos are displayed directly from the source and are never copied to a
+  Hringer server or retained anywhere outside your device.</p>
+
+  <h2>What we store, and for how long</h2>
+  <p>Locally stored data — service authentication tokens and app settings — stays on your device
+  until you revoke access or uninstall the app. To stop an app's access to Google Photos or
+  OneDrive, revoke it from your Google Account or Microsoft Account permissions page at any time;
+  this immediately invalidates the stored token. Uninstalling an app removes its local settings
+  and cached tokens along with it.</p>
+
+  <h2>Children's privacy</h2>
+  <p>Hringer apps aren't directed at children, and we don't knowingly collect data from anyone
+  regardless of age.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted here with a new "last updated"
+  date. Material changes affecting how an app handles your data will be called out in that app's
+  release notes.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or how a specific app handles your data:
+  <a href="mailto:heatherring1976@gmail.com">heatherring1976@gmail.com</a></p>
+
+  <footer><a href="/">&larr; Back to Hringer</a></footer>
 </body>
 </html>
