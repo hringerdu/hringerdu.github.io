@@ -1,0 +1,206 @@
+/*
+ * Hringer shared stylesheet — v0.3
+ * Served from https://hringer.com/assets/site.css and linked by every Hringer site.
+ *
+ * Rules:
+ *  - Pages carry NO inline <style> blocks. Layout/look lives here.
+ *  - System fonts only, no external requests (matches the privacy policy: no third parties).
+ *  - Colors come from the --hr-* tokens below. Never hard-code a color in a page.
+ *  - A product site may override --hr-product (its accent) on <body>, nothing else.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* Color — light */
+  --hr-bg:        #f6f9f8;
+  --hr-surface:   #ffffff;
+  --hr-text:      #14201f;
+  --hr-muted:     #4f5f5d;
+  --hr-border:    #d5e0de;
+  --hr-accent:    #0a736e;   /* the teal ring */
+  --hr-accent-hover: #075a56;
+  --hr-on-accent: #ffffff;
+  --hr-focus:     #0a736e;
+  --hr-code-bg:   #eaf0ef;
+
+  /* Per-product accent hook (defaults to the brand accent) */
+  --hr-product: var(--hr-accent);
+  --hr-on-product: var(--hr-on-accent);
+
+  /* Type */
+  --hr-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --hr-mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+
+  /* Scale */
+  --hr-measure: 42rem;
+  --hr-radius: 10px;
+  --hr-gap: 1rem;
+}
+
+/* Per-product accents. Put data-product="<id>" on <body> (product site) or on a hub card.
+   Used for the nav underline, card edge, title rule, card title and primary button. */
+[data-product="tiny-slideshow"] { --hr-product: #056ee0; --hr-on-product: #ffffff; }
+[data-product="mainline-dcc"]   { --hr-product: #b45309; --hr-on-product: #ffffff; }
+[data-product="binaural-composer"] { --hr-product: #6d45d9; --hr-on-product: #ffffff; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hr-bg:        #0d1514;
+    --hr-surface:   #141e1d;
+    --hr-text:      #e4eceb;
+    --hr-muted:     #9db0ad;
+    --hr-border:    #253433;
+    --hr-accent:    #4fd1c5;
+    --hr-accent-hover: #7fe3da;
+    --hr-on-accent: #06201e;
+    --hr-focus:     #4fd1c5;
+    --hr-code-bg:   #1b2827;
+  }
+
+  [data-product="tiny-slideshow"] { --hr-product: #5aa5ff; --hr-on-product: #022852; }
+  [data-product="mainline-dcc"]   { --hr-product: #f5a524; --hr-on-product: #1b1200; }
+  [data-product="binaural-composer"] { --hr-product: #a78bfa; --hr-on-product: #150a38; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--hr-bg);
+  color: var(--hr-text);
+  font-family: var(--hr-font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* ---------- Layout ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--hr-border);
+  background: var(--hr-surface);
+}
+.site-header__inner,
+.site-main,
+.site-footer__inner {
+  max-width: var(--hr-measure);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hr-gap);
+  min-height: 3.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.site-main { padding-top: 2.5rem; padding-bottom: 3rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--hr-text);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.brand img, .brand svg { width: 1.75rem; height: 1.75rem; display: block; }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; font-size: 0.95rem; }
+.site-nav a { color: var(--hr-muted); text-decoration: none; padding: 0.25rem 0; }
+.site-nav a:hover { color: var(--hr-text); }
+.site-nav a[aria-current="page"] { color: var(--hr-text); box-shadow: inset 0 -2px 0 var(--hr-product); }
+
+.site-footer { border-top: 1px solid var(--hr-border); color: var(--hr-muted); font-size: 0.9rem; }
+.site-footer__inner { padding-top: 1.5rem; padding-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+
+/* ---------- Typography ---------- */
+
+h1, h2, h3 { line-height: 1.25; margin: 0; }
+h1 { font-size: 2rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin-top: 2.5rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.1rem; margin-top: 1.75rem; margin-bottom: 0.25rem; }
+p, ul, ol { margin: 0.75rem 0; }
+
+.tagline { color: var(--hr-muted); font-size: 1.15rem; margin-top: 0.5rem; }
+.updated { color: var(--hr-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+
+a { color: var(--hr-accent); text-underline-offset: 0.18em; }
+a:hover { color: var(--hr-accent-hover); }
+:focus-visible { outline: 3px solid var(--hr-focus); outline-offset: 2px; border-radius: 3px; }
+
+code {
+  font-family: var(--hr-mono);
+  font-size: 0.9em;
+  background: var(--hr-code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Components ---------- */
+
+/* Hero block at the top of a page: <header class="page-title"> */
+.page-title { padding-bottom: 0.5rem; border-bottom: 3px solid var(--hr-product); display: inline-block; padding-right: 1.5rem; }
+.page-title h1 { display: inline; }
+
+/* Product list on the hub: <ul class="cards"><li><a class="card">…</a></li></ul> */
+.cards { list-style: none; padding: 0; margin: 1.5rem 0; display: grid; gap: var(--hr-gap); }
+.card {
+  display: block;
+  background: var(--hr-surface);
+  border: 1px solid var(--hr-border);
+  border-left: 4px solid var(--hr-product);
+  border-radius: var(--hr-radius);
+  padding: 1rem 1.25rem;
+  color: var(--hr-text);
+  text-decoration: none;
+}
+.card:hover { border-color: var(--hr-product); }
+.card__title { display: block; font-weight: 700; color: var(--hr-product); font-size: 1.1rem; }
+.card__desc { display: block; color: var(--hr-muted); margin-top: 0.15rem; }
+
+/* Emphasized block, e.g. the support email address: <p class="callout"> */
+.callout {
+  background: var(--hr-surface);
+  border: 1px solid var(--hr-border);
+  border-radius: var(--hr-radius);
+  padding: 1rem 1.25rem;
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+.callout .note { display: block; margin-top: 0.4rem; font-size: 0.875rem; color: var(--hr-muted); }
+
+/* Link styled as a button: <a class="button" href="mailto:…"> */
+.button {
+  display: inline-block;
+  background: var(--hr-product);
+  color: var(--hr-on-product);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+}
+.button:hover { filter: brightness(0.9); color: var(--hr-on-product); }
+
+/* Store badge / link row */
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+
+@media (max-width: 30rem) {
+  body { font-size: 1rem; }
+  h1 { font-size: 1.7rem; }
+  .site-main { padding-top: 1.75rem; }
+}
+
+@media print {
+  .site-header, .site-footer { display: none; }
+  body { background: #fff; color: #000; }
+}
