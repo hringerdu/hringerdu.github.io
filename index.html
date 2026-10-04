@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hringer</title>
-<style>
-  body { font-family: -apple-system, Segoe UI, sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; color: #222; }
-  h1 { margin-bottom: 0.25rem; }
-  .tagline { color: #666; margin-top: 0; }
-  ul { list-style: none; padding: 0; }
-  li { margin: 1rem 0; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
-  a { color: #0a5; text-decoration: none; font-weight: 600; }
-  footer { margin-top: 3rem; font-size: 0.9rem; color: #888; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Small, focused Windows and mobile apps from Hringer.">
+  <title>Hringer</title>
+  <link rel="icon" href="/assets/hringer-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <h1>Hringer</h1>
-  <p class="tagline">Small, focused Windows &amp; mobile apps.</p>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/"><img src="/assets/hringer-mark.svg" alt=""> Hringer</a>
+      <nav class="site-nav" aria-label="Site">
+      <a href="/" aria-current="page">Apps</a>
+      <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main">
+    <h1>Hringer</h1>
+    <p class="tagline">Small, focused Windows &amp; mobile apps.</p>
 
-  <ul>
-    <li><a href="https://tiny-slideshow.hringer.com">Tiny Slideshow</a> — a simple photo slideshow app for Windows.</li>
-    <li><a href="https://mainline-dcc.hringer.com">Mainline DCC</a> — a DCC model railroad controller for Android and Windows.</li>
-    <li><a href="https://binaural-composer.hringer.com">Binaural Composer</a> — coming soon.</li>
-  </ul>
-
-  <footer>
-    <a href="/privacy">Privacy Policy</a>
+    <ul class="cards">
+      <li><a class="card" data-product="tiny-slideshow" href="https://tiny-slideshow.hringer.com"><span class="card__title">Tiny Slideshow</span><span class="card__desc">A simple photo slideshow app for Windows.</span></a></li>
+      <li><a class="card" data-product="mainline-dcc" href="https://mainline-dcc.hringer.com"><span class="card__title">Mainline DCC</span><span class="card__desc">A DCC model railroad controller for Android and Windows.</span></a></li>
+      <li><a class="card" data-product="binaural-composer" href="https://binaural-composer.hringer.com"><span class="card__title">Binaural Composer</span><span class="card__desc">Coming soon.</span></a></li>
+    </ul>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="/privacy">Privacy Policy</a>
+      <span>© 2026 Hringer</span>
+    </div>
   </footer>
 </body>
 </html>
