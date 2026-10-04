@@ -1,5 +1,5 @@
 /*
- * Hringer shared stylesheet — v0.2
+ * Hringer shared stylesheet — v0.3
  * Served from https://hringer.com/assets/site.css and linked by every Hringer site.
  *
  * Rules:
@@ -40,8 +40,8 @@
 
 /* Per-product accents. Put data-product="<id>" on <body> (product site) or on a hub card.
    Used for the nav underline, card edge, title rule, card title and primary button. */
-[data-product="tiny-slideshow"] { --hr-product: #b45309; --hr-on-product: #ffffff; }
-[data-product="mainline-dcc"]   { --hr-product: #1f6feb; --hr-on-product: #ffffff; }
+[data-product="tiny-slideshow"] { --hr-product: #056ee0; --hr-on-product: #ffffff; }
+[data-product="mainline-dcc"]   { --hr-product: #b45309; --hr-on-product: #ffffff; }
 [data-product="binaural-composer"] { --hr-product: #6d45d9; --hr-on-product: #ffffff; }
 
 @media (prefers-color-scheme: dark) {
@@ -58,8 +58,8 @@
     --hr-code-bg:   #1b2827;
   }
 
-  [data-product="tiny-slideshow"] { --hr-product: #f5a524; --hr-on-product: #1b1200; }
-  [data-product="mainline-dcc"]   { --hr-product: #6ea8fe; --hr-on-product: #06142e; }
+  [data-product="tiny-slideshow"] { --hr-product: #5aa5ff; --hr-on-product: #022852; }
+  [data-product="mainline-dcc"]   { --hr-product: #f5a524; --hr-on-product: #1b1200; }
   [data-product="binaural-composer"] { --hr-product: #a78bfa; --hr-on-product: #150a38; }
 }
 
