@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Small, focused Windows and mobile apps from Hringer.">
+  <meta name="description" content="Independent apps for Windows and mobile, built by one developer.">
   <title>Hringer</title>
-  <link rel="icon" href="/assets/hringer-mark.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/hringer-tile.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
@@ -20,12 +22,22 @@
   </header>
   <main class="site-main">
     <h1>Hringer</h1>
-    <p class="tagline">Small, focused Windows &amp; mobile apps.</p>
+    <p class="tagline">Independent apps for Windows and mobile, built by one developer.</p>
 
+    <h2 id="available">Available now</h2>
     <ul class="cards">
-      <li><a class="card" data-product="tiny-slideshow" href="https://tiny-slideshow.hringer.com"><span class="card__title">Tiny Slideshow</span><span class="card__desc">A simple photo slideshow app for Windows.</span></a></li>
-      <li><a class="card" data-product="mainline-dcc" href="https://mainline-dcc.hringer.com"><span class="card__title">Mainline DCC</span><span class="card__desc">A DCC model railroad controller for Android and Windows.</span></a></li>
-      <li><a class="card" data-product="binaural-composer" href="https://binaural-composer.hringer.com"><span class="card__title">Binaural Composer</span><span class="card__desc">Coming soon.</span></a></li>
+      <li><div class="card" data-product="tiny-slideshow">
+        <div class="card__head"><span class="card__title">Tiny Slideshow</span><span class="status status--available">Available</span></div>
+        <span class="card__desc">A quiet slideshow of your photos that runs on your desktop while you work. For Windows.</span>
+        <p class="card__actions"><a class="button" href="https://apps.microsoft.com/detail/9ND55R7XN4SM">Get it on the Microsoft Store</a><a href="https://tiny-slideshow.hringer.com">Learn more</a><a href="https://tiny-slideshow.hringer.com/support">Support</a></p>
+      </div></li>
+    </ul>
+
+    <h2 id="in-development">In development</h2>
+    <p class="lead">Two full-featured apps are in development, with first releases planned for 2027.</p>
+    <ul class="cards">
+      <li><a class="card card--soon" data-product="mainline-dcc" href="https://mainline-dcc.hringer.com"><span class="card__head"><span class="card__title">Mainline DCC</span><span class="status status--soon">In development &middot; 2027</span></span><span class="card__desc">A full-featured model railroad throttle and automation app for Android and Windows.</span></a></li>
+      <li><a class="card card--soon" data-product="binaural-composer" href="https://binaural-composer.hringer.com"><span class="card__head"><span class="card__title">Binaural Composer</span><span class="status status--soon">In development &middot; 2027</span></span><span class="card__desc">A full-featured app for composing and playing binaural beats. For Windows, with Android to follow.</span></a></li>
     </ul>
   </main>
   <footer class="site-footer">
