@@ -42,7 +42,7 @@
    Used for the nav underline, card edge, title rule, card title and primary button. */
 [data-product="tiny-slideshow"] { --hr-product: #056ee0; --hr-on-product: #ffffff; }
 [data-product="mainline-dcc"]   { --hr-product: #b45309; --hr-on-product: #ffffff; }
-[data-product="binaural-composer"] { --hr-product: #6d45d9; --hr-on-product: #ffffff; }
+[data-product="binaural-composer"] { --hr-product: #2f3590; --hr-on-product: #ffffff; }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -60,7 +60,7 @@
 
   [data-product="tiny-slideshow"] { --hr-product: #5aa5ff; --hr-on-product: #022852; }
   [data-product="mainline-dcc"]   { --hr-product: #f5a524; --hr-on-product: #1b1200; }
-  [data-product="binaural-composer"] { --hr-product: #a78bfa; --hr-on-product: #150a38; }
+  [data-product="binaural-composer"] { --hr-product: #939cff; --hr-on-product: #0b0e3a; }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
